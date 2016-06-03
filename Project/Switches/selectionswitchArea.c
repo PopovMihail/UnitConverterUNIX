@@ -15,12 +15,13 @@ double selectionswitchArea(double MEASUREMENT)
            "5 - Акры;\n"
 		   "6 - Квадратный сантиметр;\n"
            "7 - Квадратный дюйм;\n"
-           "8 - Квадратный миллиметр;\n");
+           "8 - Квадратный миллиметр;\n\t");
+    scanf("%s", key.in);
     key.input_choice = parsing_id(key.in);
-    //scanf("%d", &key.input_choice);
-    while(key.input_choice >= 8 || key.input_choice == 0) {
+    while(key.input_choice > 8 || key.input_choice == 0) {
         fprintf(stderr, "\nВы выбрали величину, которой нет в списке доступных величин. \nПожалуйста, сделайте корректный выбор\n\t");
-        scanf("%d", &key.input_choice);
+        scanf("%s", key.in);
+        key.input_choice = parsing_id(key.in);
     }
 
     printf("Выберите величину, в которую Вы хотите конвертировать Вашу величину.\n"
@@ -32,13 +33,14 @@ double selectionswitchArea(double MEASUREMENT)
            "5 - Акры;\n"
 		   "6 - Квадратный сантиметр;\n"
            "7 - Квадратный дюйм;\n"
-           "8 - Квадратный миллиметр;\n");
+           "8 - Квадратный миллиметр;\n\t");
+    scanf("%s", key.out);
     key.output_choice = parsing_id(key.out);
-    //scanf("%d", &key.output_choice);
-    while(key.output_choice == key.input_choice || key.input_choice >= 8 || key.input_choice == 0 )  {
+    while(key.output_choice == key.input_choice || key.output_choice > 8 || key.output_choice == 0 )  {
         fprintf(stderr, "\nВы выбрали величину, которой нет в списке доступных величин, \nили Вы пытаетесь конвертировать "
                 "одну и ту же величину. \nПожалуйста, сделайте корректный выбор\n\t");
-        scanf("%d", &key.output_choice);
+        scanf("%s", key.out);
+        key.output_choice = parsing_id(key.out);
     }
 
     key.id = key.input_choice * 10 + key.output_choice;
@@ -216,6 +218,6 @@ double selectionswitchArea(double MEASUREMENT)
                    "или Вы пытаетесь конвертировать в величину, которую уже преобразуете\n");
             break;
     }
-	
+
     return key.gate;
 }
