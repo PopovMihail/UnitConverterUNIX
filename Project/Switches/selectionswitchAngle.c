@@ -40,7 +40,8 @@ double selectionswitchAngle(double MEASUREMENT)
     while(key.output_choice == key.input_choice || key.output_choice >= 8 || key.output_choice == 0 )  {
         fprintf(stderr, "\nВы выбрали величину, которой нет в списке доступных величин, \nили Вы пытаетесь конвертировать "
                 "одну и ту же величину. \nПожалуйста, сделайте корректный выбор\n\t");
-        scanf("%d", &key.output_choice);
+        scanf("%s", key.out);
+        key.input_choice = parsing_id(key.out);
     }
 
     key.id = key.input_choice * 10 + key.output_choice;
