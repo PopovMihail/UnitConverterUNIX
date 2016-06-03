@@ -95,6 +95,12 @@ CTEST(total, QOS1) {
     ASSERT_DBL_NEAR(s, res);
 }
 
+CTEST(total, QOS2) {    
+    double  res = PoundMole2Mole(895648798463541.48978945486484984);
+    double s = 4.062594652089394 * pow(10, 17);
+    ASSERT_DBL_NEAR(s, res);
+}
+
 CTEST(total, Mass1) {    
     double  res = Drachmas_TO_Kilograms(a);
     double s =  1.771850 * pow(10, -36);
@@ -125,9 +131,21 @@ CTEST(total, Amount1) {
     ASSERT_DBL_NEAR(s, res);
 }
 
+CTEST(total, Amount2) {    
+    double  res = flozs_TO_squaredmeters(b);
+    double s =  2.95735295625 * pow(10, 8);
+    ASSERT_DBL_NEAR(s, res);
+}
+
 CTEST(total, Radiation1) {    
     double  res = PTOKlperKg(a);
     double s =  2.579760 * pow(10, -43);
+    ASSERT_DBL_NEAR(s, res);
+}
+
+CTEST(total, Radiation2) {    
+    double  res = PTOKlperKg(b);
+    double s =  2.579760 * pow(10, 9);
     ASSERT_DBL_NEAR(s, res);
 }
 
@@ -167,6 +185,12 @@ CTEST(total, Angle1) {
     ASSERT_DBL_NEAR(s, res);
 }
 
+CTEST(total, Angle2) {    
+    double  res = Radian2Degree(b);
+    double s =  5.7295779513 * pow(10, 14);
+    ASSERT_DBL_NEAR(s, res);
+}
+
 CTEST(total, Frequency1) {    
     double  res = RadSec2Herz(a);
     double s =  1.591548 * pow(10, -34);
@@ -182,5 +206,17 @@ CTEST(total, Energy1) {
 CTEST(total, Energy2) {    
     double  res = electronvolt_to_joule(b);
     double s = 1.602176 * pow(10, -6);
+    ASSERT_DBL_NEAR(s, res);
+}
+
+CTEST(total, Electric1) {    
+    double  res = ElementaryElectricChargeTOKl(a);
+    double s =  1.602177 * pow(10, -52);
+    ASSERT_DBL_NEAR(s, res);
+}
+
+CTEST(total, Electric2) {    
+    double  res = ElementaryElectricChargeTOKl(b);
+    double s = 1.602177 * pow(10, -6);
     ASSERT_DBL_NEAR(s, res);
 }
