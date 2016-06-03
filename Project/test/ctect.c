@@ -220,3 +220,15 @@ CTEST(total, Electric2) {
     double s = 1.602177 * pow(10, -6);
     ASSERT_DBL_NEAR(s, res);
 }*/
+
+CTEST(total, Area) {    
+    double  res = SquareMeter2Acr(a);
+    double s =  2.471055 * pow(10, -37);
+    ASSERT_DBL_NEAR(s, res);
+}
+
+CTEST(total, Strength) {    
+    double  res = Newton2kgsNewton(a);
+    double s =  1.019720 * pow(10, -34);
+    ASSERT_DBL_NEAR(s, res);
+}
