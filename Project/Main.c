@@ -26,14 +26,12 @@ int main()
                "8 - Мощность;\t\t\t18 - Угол; \n"
                "9 - Объём;\t\t\t19 - Частота; \n"
                "10 - Площадь;\t\t\t20 - Энергия; \n\t");
-        scanf("%s", &head.measurement_id);
+        scanf("%s", head.measurement_id);
 		int f = parsing_id(head.measurement_id);
-		//printf("%d \n", f);
         while(f >= 21 || f <= 0) {
             printf("\nРод величины вами не выбран. Сделайте корректный выбор: \n\t");
-            scanf("%s", &head.measurement_id);
+            scanf("%s", head.measurement_id);
             f = parsing_id(head.measurement_id);
-            //printf("%d \n", f);
         }
 
         switch(f) {
