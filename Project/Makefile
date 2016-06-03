@@ -1,9 +1,6 @@
-
 FLAG = ./obj
-# Main.o parsing.o convert.o Length.o Amount.o Angle.o Area.o Data.o Electric_charge.o Energy.o Frequency.o Mass.o Power.o Pression.o QuantityOfSubstance.o Speed.o Strength.o Temperature.o Time.o selectionswitchAmount.o selectionswitchAngle.o selectionswitchData.o selectionswitchEnergy.o selectionswitchFrequency.o selectionswitchLength.o selectionswitchMass.o selectionswitchPower.o selectionswitchPression.o selectionswitchQuantityOfSubstance.o selectionswitchSpeed.o selectionswitchTemperature.o selectionswitchTime.o 
 
-Convert: $(FLAG)/Main.o $(FLAG)/parsing.o $(FLAG)/convert.o $(FLAG)/Strength.o $(FLAG)/Ampere.o $(FLAG)/Density.o $(FLAG)/Length.o $(FLAG)/Amount.o $(FLAG)/Angle.o $(FLAG)/Area.o $(FLAG)/Data.o $(FLAG)/Electric_charge.o $(FLAG)/Energy.o $(FLAG)/Frequency.o $(FLAG)/Mass.o $(FLAG)/Power.o $(FLAG)/Pression.o $(FLAG)/QuantityOfSubstance.o $(FLAG)/Speed.o $(FLAG)/Temperature.o $(FLAG)/Time.o $(FLAG)/Resistance.o $(FLAG)/Radiation.o $(FLAG)/selectionswitchAmount.o $(FLAG)/selectionswitchAngle.o $(FLAG)/selectionswitchData.o $(FLAG)/selectionswitchEnergy.o $(FLAG)/selectionswitchFrequency.o $(FLAG)/selectionswitchLength.o $(FLAG)/selectionswitchMass.o $(FLAG)/selectionswitchPower.o $(FLAG)/selectionswitchPression.o $(FLAG)/selectionswitchQuantityOfSubstance.o $(FLAG)/selectionswitchSpeed.o $(FLAG)/selectionswitchTemperature.o $(FLAG)/selectionswitchTime.o $(FLAG)/selectionswitchArea.o $(FLAG)/selectionswitchRadiation.o $(FLAG)/selectionswitchResistance.o $(FLAG)/selectionswitchElectric_charge.o $(FLAG)/selectionswitchStrength.o $(FLAG)/selectionswitchAmpere.o $(FLAG)/selectionswitchDensity.o
- 
+Convert: $(FLAG)/Main.o $(FLAG)/parsing.o $(FLAG)/convert.o $(FLAG)/Density.o $(FLAG)/Ampere.o $(FLAG)/Strength.o $(FLAG)/Length.o $(FLAG)/Amount.o $(FLAG)/Angle.o $(FLAG)/Area.o $(FLAG)/Data.o $(FLAG)/Electric_charge.o $(FLAG)/Energy.o $(FLAG)/Frequency.o $(FLAG)/Mass.o $(FLAG)/Power.o $(FLAG)/Pression.o $(FLAG)/QuantityOfSubstance.o $(FLAG)/Speed.o $(FLAG)/Temperature.o $(FLAG)/Time.o $(FLAG)/Resistance.o $(FLAG)/Radiation.o $(FLAG)/selectionswitchAmount.o $(FLAG)/selectionswitchAngle.o $(FLAG)/selectionswitchData.o $(FLAG)/selectionswitchEnergy.o $(FLAG)/selectionswitchFrequency.o $(FLAG)/selectionswitchLength.o $(FLAG)/selectionswitchMass.o $(FLAG)/selectionswitchPower.o $(FLAG)/selectionswitchPression.o $(FLAG)/selectionswitchQuantityOfSubstance.o $(FLAG)/selectionswitchSpeed.o $(FLAG)/selectionswitchTemperature.o $(FLAG)/selectionswitchTime.o $(FLAG)/selectionswitchArea.o $(FLAG)/selectionswitchRadiation.o $(FLAG)/selectionswitchResistance.o $(FLAG)/selectionswitchElectric_charge.o $(FLAG)/selectionswitchStrength.o $(FLAG)/selectionswitchAmpere.o $(FLAG)/selectionswitchDensity.o
 		gcc -o Convert -lm $^
  
 $(FLAG)/Main.o: Main.c
@@ -65,15 +62,15 @@ $(FLAG)/Temperature.o: Modules/Temperature.c
 		
 $(FLAG)/Time.o: Modules/Time.c
 		gcc -c Modules/Time.c -o $(FLAG)/Time.o
-##
-#$(FLAG)/Strength.o: Modules/Strength.c
-#		gcc -c Modules/Strength.c -o $(FLAG)/Strength.o
 
-#$(FLAG)/Ampere.o: Modules/Ampere.c
-#		gcc -c Modules/Ampere.c -o $(FLAG)/Ampere.o
+$(FLAG)/Strength.o: Modules/Strength.c
+		gcc -c Modules/Strength.c -o $(FLAG)/Strength.o
 
-#$(FLAG)/Density.o: Modules/Density.c
-#		gcc -c Modules/Density.c -o $(FLAG)/Density.o		
+$(FLAG)/Ampere.o: Modules/Ampere.c
+		gcc -c Modules/Ampere.c -o $(FLAG)/Ampere.o
+
+$(FLAG)/Density.o: Modules/Density.c	
+		gcc -c Modules/Density.c -o $(FLAG)/Density.o		
 		
 		#свитчи	
 $(FLAG)/selectionswitchAmount.o: Switches/selectionswitchAmount.c
@@ -126,18 +123,18 @@ $(FLAG)/selectionswitchArea.o: Switches/selectionswitchArea.c
 		
 $(FLAG)/selectionswitchElectric_charge.o: Switches/selectionswitchElectric_charge.c
 		gcc -c Switches/selectionswitchElectric_charge.c -o $(FLAG)/selectionswitchElectric_charge.o
-##
-#$(FLAG)/selectionswitchStrength.o: Switches/selectionswitchStrength.c
-#		gcc -c Switches/selectionswitchStrength.c -o $(FLAG)/selectionswitchStrength.o
+
+$(FLAG)/selectionswitchStrength.o: Switches/selectionswitchStrength.c
+		gcc -c Switches/selectionswitchStrength.c -o $(FLAG)/selectionswitchStrength.o
 		
-#$(FLAG)/selectionswitchAmpere.o: Switches/selectionswitchAmpere.c
-#		gcc -c Switches/selectionswitchAmpere.c -o $(FLAG)/selectionswitchAmpere.o
+$(FLAG)/selectionswitchAmpere.o: Switches/selectionswitchAmpere.c
+		gcc -c Switches/selectionswitchAmpere.c -o $(FLAG)/selectionswitchAmpere.o
 		
-#$(FLAG)/selectionswitchDensity.o: Switches/selectionswitchDensity.c
-#		gcc -c Switches/selectionswitchDensity.c -o $(FLAG)/selectionswitchDensity.o
+$(FLAG)/selectionswitchDensity.o: Switches/selectionswitchDensity.c
+		gcc -c Switches/selectionswitchDensity.c -o $(FLAG)/selectionswitchDensity.o
 
 # тесты
-test: $(FLAG)/ctect.o $(FLAG)/main.o $(FLAG)/parsing.o $(FLAG)/Electric_charge.o $(FLAG)/Energy.o $(FLAG)/Frequency.o $(FLAG)/Angle.o $(FLAG)/Temperature.o $(FLAG)/Resistance.o $(FLAG)/Speed.o $(FLAG)/Radiation.o $(FLAG)/Amount.o $(FLAG)/Power.o $(FLAG)/Mass.o $(FLAG)/QuantityOfSubstance.o $(FLAG)/Length.o $(FLAG)/Data.o $(FLAG)/Pression.o $(FLAG)/Time.o
+test: $(FLAG)/ctect.o $(FLAG)/main.o $(FLAG)/parsing.o $(FLAG)/Strength.o $(FLAG)/Area.o $(FLAG)/Electric_charge.o $(FLAG)/Energy.o $(FLAG)/Frequency.o $(FLAG)/Angle.o $(FLAG)/Temperature.o $(FLAG)/Resistance.o $(FLAG)/Speed.o $(FLAG)/Radiation.o $(FLAG)/Amount.o $(FLAG)/Power.o $(FLAG)/Mass.o $(FLAG)/QuantityOfSubstance.o $(FLAG)/Length.o $(FLAG)/Data.o $(FLAG)/Pression.o $(FLAG)/Time.o
 		gcc -o Test -lm $^
 
 $(FLAG)/ctect.o: test/ctect.c

@@ -16,16 +16,16 @@ int main()
 
     while(head.like_to_continue == 'y') {
         printf("Выберите, с величиной какого рода Вы хотели бы работать: \n"
-               "1 - Время;\t\t\t11 - ++Плотность; \n"
+               "1 - Время;\t\t\t11 - Плотность; \n"
                "2 - Давление;\t\t\t12 - Радиоактивность; \n"
-               "3 - Данные;\t\t\t13 - ++Сила; \n"
-               "4 - Длина;\t\t\t14 - ++Сила тока; \n"
+               "3 - Данные;\t\t\t13 - Сила; \n"
+               "4 - Длина;\t\t\t14 - Сила тока; \n"
                "5 - Заряд;\t\t\t15 - Скорость; \n"
                "6 - Количество вещества;\t16 - Сопротивление; \n"
                "7 - Масса;\t\t\t17 - Температура; \n"
                "8 - Мощность;\t\t\t18 - Угол; \n"
                "9 - Объём;\t\t\t19 - Частота; \n"
-               "10 - ++Площадь;\t\t\t20 - Энергия; \n\t");
+               "10 - Площадь;\t\t\t20 - Энергия; \n\t");
         scanf("%s", &head.measurement_id);
 		int f = parsing_id(head.measurement_id);
 		//printf("%d \n", f);
@@ -146,13 +146,29 @@ int main()
                 head.result = selectionswitchAmount(head.VOLUME);
                 break;
             case 10:
-                fprintf(stderr, "Модуль не существует\n");
-                system("pause");
-                exit(EXIT_FAILURE);
+                printf("Введите число, которое Вы хотели были перевести. \n"
+                       "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
+                scanf("%s", head.MEASUREMENT);
+                head.VOLUME = parsing(head.MEASUREMENT);
+                while(head.VOLUME  == -1.111){
+					fprintf(stderr, "Вы ввели не коректные данные.\n\t");
+					scanf("%s", head.MEASUREMENT);
+					head.VOLUME = parsing(head.MEASUREMENT);
+				}
+                head.result = selectionswitchArea(head.VOLUME);
+                break;
             case 11:
-                fprintf(stderr, "Модуль не существует\n");
-                system("pause");
-                exit(EXIT_FAILURE);
+                printf("Введите число, которое Вы хотели были перевести. \n"
+                       "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
+                scanf("%s", head.MEASUREMENT);
+                head.VOLUME = parsing(head.MEASUREMENT);
+                while(head.VOLUME  == -1.111){
+					fprintf(stderr, "Вы ввели не коректные данные.\n\t");
+					scanf("%s", head.MEASUREMENT);
+					head.VOLUME = parsing(head.MEASUREMENT);
+				}
+                head.result = selectionswitchDensity(head.VOLUME);
+                break;
             case 12:
                 printf("Введите число, которое Вы хотели были перевести. \n"
                        "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
@@ -166,13 +182,29 @@ int main()
                 head.result = selectionswitchRadiation(head.VOLUME);
                 break;
             case 13:
-                fprintf(stderr, "Модуль не существует\n");
-                system("pause");
-                exit(EXIT_FAILURE);
+                printf("Введите число, которое Вы хотели были перевести. \n"
+                       "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
+                scanf("%s", head.MEASUREMENT);
+                head.VOLUME = parsing(head.MEASUREMENT);
+                while(head.VOLUME  == -1.111){
+					fprintf(stderr, "Вы ввели не коректные данные.\n\t");
+					scanf("%s", head.MEASUREMENT);
+					head.VOLUME = parsing(head.MEASUREMENT);
+				}
+                head.result = selectionswitchStrength(head.VOLUME);
+                break;
             case 14:
-                fprintf(stderr, "Модуль не существует\n");
-                system("pause");
-                exit(EXIT_FAILURE);
+                printf("Введите число, которое Вы хотели были перевести. \n"
+                       "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
+                scanf("%s", head.MEASUREMENT);
+                head.VOLUME = parsing(head.MEASUREMENT);
+                while(head.VOLUME  == -1.111){
+					fprintf(stderr, "Вы ввели не коректные данные.\n\t");
+					scanf("%s", head.MEASUREMENT);
+					head.VOLUME = parsing(head.MEASUREMENT);
+				}
+                head.result = selectionswitchAmpere(head.VOLUME);
+                break;
             case 15:
                 printf("Введите число, которое Вы хотели были перевести. \n"
                        "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
