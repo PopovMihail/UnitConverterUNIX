@@ -20,7 +20,7 @@ int main()
                "2 - Давление;\t\t\t12 - Радиоактивность; \n"
                "3 - Данные;\t\t\t13 - ++Сила; \n"
                "4 - Длина;\t\t\t14 - ++Сила тока; \n"
-               "5 - +Заряд;\t\t\t15 - Скорость; \n"
+               "5 - Заряд;\t\t\t15 - Скорость; \n"
                "6 - Количество вещества;\t16 - Сопротивление; \n"
                "7 - Масса;\t\t\t17 - Температура; \n"
                "8 - Мощность;\t\t\t18 - Угол; \n"
@@ -86,9 +86,17 @@ int main()
                 head.result = selectionswitchLength(head.VOLUME);
                 break;
             case 5:
-                fprintf(stderr, "Модуль не существует\n");
-                system("pause");
-                exit(EXIT_FAILURE);
+                printf("Введите число, которое Вы хотели были перевести. \n"
+                       "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
+                scanf("%s", head.MEASUREMENT);
+                head.VOLUME = parsing(head.MEASUREMENT);
+                while(head.VOLUME  == -1.111){
+					fprintf(stderr, "Вы ввели не коректные данные.\n\t");
+					scanf("%s", head.MEASUREMENT);
+					head.VOLUME = parsing(head.MEASUREMENT);
+				}
+                head.result = selectionswitchElectric_charge(head.VOLUME);
+                break;
             case 6:
                 printf("Введите число, которое Вы хотели были перевести. \n"
                        "В качестве знака-разделителя для вещественных чисел используйте символ '.'.\n\t");
