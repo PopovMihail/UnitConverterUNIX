@@ -208,7 +208,7 @@ CTEST(total, Energy2) {
     double s = 1.602176 * pow(10, -6);
     ASSERT_DBL_NEAR(s, res);
 }
-
+/*
 CTEST(total, Electric1) {    
     double  res = ElementaryElectricChargeTOKl(a);
     double s =  1.602177 * pow(10, -52);
@@ -219,4 +219,4 @@ CTEST(total, Electric2) {
     double  res = ElementaryElectricChargeTOKl(b);
     double s = 1.602177 * pow(10, -6);
     ASSERT_DBL_NEAR(s, res);
-}
+}*/
